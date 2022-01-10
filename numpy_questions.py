@@ -39,10 +39,22 @@ def max_index(X):
     """
     i = 0
     j = 0
-
-    # TODO
-
-    return i, j
+    max = 0
+# TODO
+    if type(X).__module__ == np.__name__:
+        if X.ndim == 2:
+            row, column = X.shape
+            for x in range(row):
+                for y in range(column):
+                    if X[x, y] > max:
+                        max = X[x, y]
+                        i = x
+                        j = y
+            return i, j
+        else:
+            raise ValueError
+    else:
+        raise ValueError
 
 
 def wallis_product(n_terms):
@@ -64,4 +76,7 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    pi = 1
+    for n in range(n_terms):
+        pi *= 4*(n+1)**2/(4*(n+1)**(2)-1)
+    return pi*2
