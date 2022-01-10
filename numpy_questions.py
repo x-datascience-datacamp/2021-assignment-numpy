@@ -48,6 +48,7 @@ def max_index(X):
 
     return i, j
 
+
 def wallis_product(n_terms):
     """Implement the Wallis product to compute an approximation of pi.
 
@@ -69,5 +70,5 @@ def wallis_product(n_terms):
     # terms in the product. For example 10000.
     n = np.arange(1, n_terms+1)
     a = (4. * n**2.) / (4. * n**2. - 1.)
-    
+
     return np.product(a) * 2
