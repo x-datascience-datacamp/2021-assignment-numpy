@@ -1,5 +1,5 @@
 
-"""Assignment - using numpy and making a PR.
+""" Assignment - using numpy and making a PR.
 The goals of this assignment are:
     * Use numpy in practice with two easy exercises.
     * Use automated tools to validate the code (`pytest` and `flake8`)
@@ -17,8 +17,7 @@ import numpy as np
 
 
 def max_index(X):
-
-    """Return the index of the maximum in a numpy array.
+    """ Return the index of the maximum in a numpy array.
     Parameters
     ----------
     X : ndarray of shape (n_samples, n_features)
@@ -40,8 +39,7 @@ def max_index(X):
 
 
 def wallis_product(n_terms):
-
-    """Implement the Wallis product to compute an approximation of pi.
+    """ Implement the Wallis product to compute an approximation of pi.
     See:
     https://en.wikipedia.org/wiki/Wallis_product
     Parameters
