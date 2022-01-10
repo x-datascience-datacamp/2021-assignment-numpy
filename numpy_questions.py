@@ -31,7 +31,7 @@ def max_index(X):
     -------
     (i, j) : tuple(int)
         The row and columnd index of the maximum.
-      
+
     Raises
     ------
     ValueError
