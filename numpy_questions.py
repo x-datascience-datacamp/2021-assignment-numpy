@@ -64,7 +64,7 @@ def wallis_product(n_terms):
         The approximation of order `n_terms` of pi using the Wallis product.
     """
 
-    prod = 1.0
+    prod = 1.0  # starts from 1.0
 
     for n in range(1, n_terms + 1):
         prod *= 4 * n ** 2 / (4 * n ** 2 - 1)
