@@ -37,7 +37,6 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-
     if(type(X).__module__ != np.__name__):
         raise ValueError
     if(len(X.shape) != 2):
