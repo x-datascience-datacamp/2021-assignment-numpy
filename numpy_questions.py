@@ -41,7 +41,7 @@ def max_index(X):
     j = 0
 
     # TODO
-    if (( not isinstance(X, np.ndarray)) or (X.ndim != 2)):
+    if(( not isinstance(X, np.ndarray)) or (X.ndim != 2)):
         raise ValueError('X is not a numpy array or its shape is not 2D')
     n_samples, n_features = X.shape
     aux = X[i, j]
