@@ -71,4 +71,4 @@ def wallis_product(n_terms):
     t2 = np.prod(2 * n_arr / (2 * n_arr + 1))
     pi = 2 * t1 * t2
     return pi
-    
+
