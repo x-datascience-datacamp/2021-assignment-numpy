@@ -44,12 +44,12 @@ def max_index(X):
         raise ValueError
 
     maximum_value = X[0, 0]
-    for k in range(len(X)):
-        for l in range(len(X[0])):
-            if X[k, l] > maximum_value:
-                maximum_value = X[k, l]
-                i = k
-                j = l
+    for x in range(len(X)):
+        for y in range(len(X[0])):
+            if X[x, y] > maximum_value:
+                maximum_value = X[x, y]
+                i = x
+                j = y
 
     return i, j
 
@@ -79,4 +79,3 @@ def wallis_product(n_terms):
         result *= 2 * n / (2 * n - 1) * 2 * n / (2 * n + 1)
 
     return result
-
