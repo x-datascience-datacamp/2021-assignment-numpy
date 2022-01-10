@@ -17,8 +17,8 @@ errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
 
-
 def max_index(X):
+
     """Return the index of the maximum in a numpy array.
 
     Parameters
@@ -26,7 +26,7 @@ def max_index(X):
     X : ndarray of shape (n_samples, n_features)
         The input array.
 
-    Returns
+    Returns s
     -------
     (i, j) : tuple(int)
         The row and columnd index of the maximum.
@@ -41,11 +41,21 @@ def max_index(X):
     j = 0
 
     # TODO
-
+    if type(X) is not np.ndarray:
+        raise ValueError
+    elif X.ndim != 2:
+        raise ValueError
+    else:
+        for m in range(X.shape[0]):
+            for n in range(X.shape[1]):
+                if X[i, j] <= X[m, n]:
+                    i = m
+                    j = n
     return i, j
 
 
 def wallis_product(n_terms):
+
     """Implement the Wallis product to compute an approximation of pi.
 
     See:
@@ -64,4 +74,13 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+
+    if n_terms == 0:
+        return 2.
+    elif n_terms == 1:
+        return 2*4/3
+    else:
+        wallis = 1
+        for n in range(1, n_terms):
+            wallis *= 4*n**2/(4*n**2 - 1)
+    return 2.*wallis
