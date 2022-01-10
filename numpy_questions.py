@@ -40,7 +40,26 @@ def max_index(X):
     i = 0
     j = 0
 
-    # TODO
+    
+	deb_msg = "ERROR max_index: "
+    fin_msg = " passed in argument)"
+
+    type_of_X = type(X)
+    if not isinstance(X, np.ndarray):
+        message_Erreur = \
+            "{}X must be an Numpy array ({}{}" \
+            .format(deb_msg, type_of_X, fin_msg)
+        raise ValueError(message_Erreur)
+
+    dim_of_X = len(X.shape)
+    if dim_of_X != 2:
+        message_Erreur = \
+            "{}the shape of X must be 2D ({}D{}" \
+            .format(deb_msg, dim_of_X, fin_msg)
+        raise ValueError(message_Erreur)
+
+    i, j = np.unravel_index(X.argmax(), X.shape)
+	# TODO
 
     return i, j
 
@@ -64,4 +83,19 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+	
+	if n_terms < 0:
+        deb_msg = "ERROR wallis_product: "
+        fin_msg = " passed in argument)"
+        message_Erreur = \
+            "{}n_terms must be positive or null (value {}{}" \
+            .format(deb_msg, n_terms, fin_msg)
+        raise ValueError(message_Erreur)
+    else:
+        pi = 1
+        for i in range(1, n_terms+1):
+            num = 4 * i**2
+            pi *= num / (num - 1)
+
+        pi *= 2
+    return pi
