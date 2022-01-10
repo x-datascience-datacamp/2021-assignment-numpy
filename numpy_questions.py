@@ -40,7 +40,7 @@ def max_index(X):
     i = 0
     j = 0
 
-   # TODO
+    # TODO
     if type(X) is not np.ndarray:
         raise ValueError('Not a numpy')
     if len(X.shape) != 2:
@@ -68,7 +68,7 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    
+
     # True Pi (approximation)
     # pi = 3.141592653589793238462643383279
     pi_approx = 1
