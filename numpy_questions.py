@@ -16,7 +16,7 @@ This will be enforced with `flake8`. You can check that there is no flake8
 errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
-
+from numpy import unravel_index
 
 def max_index(X):
     """Return the index of the maximum in a numpy array.
@@ -40,9 +40,7 @@ def max_index(X):
     i = 0
     j = 0
 
-    # TODO
-
-    return i, j
+    return unravel_index(np.argmax(X), np.shape(X))
 
 
 def wallis_product(n_terms):
@@ -62,6 +60,11 @@ def wallis_product(n_terms):
     pi : float
         The approximation of order `n_terms` of pi using the Wallis product.
     """
+    pi = 1
+    for i in range(1, n_terms):
+        left = float(2*i/(2*i-1))
+        right = float(2*i/(2*i+1))
+        pi = pi * left * right
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    return pi*2
