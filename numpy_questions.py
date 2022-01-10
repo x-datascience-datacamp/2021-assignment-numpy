@@ -85,4 +85,3 @@ def wallis_product(n_terms):
     for n in range(1, n_terms + 1):
         pi *= 2 * n / (2 * n - 1) * (2 * n / (2 * n + 1))
     return pi
-    
