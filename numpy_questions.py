@@ -14,3 +14,4 @@ def wallis_product(n_terms):
         pi *= 4*(i**2)/(4*(i**2)-1)
     pi *= 2
     return pi
+
