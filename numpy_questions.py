@@ -7,6 +7,7 @@ The goals of this assignment are:
 
 The two functions below are skeleton functions. The docstrings explain what
 are the inputs, the outputs and the expected error. Fill the function to
+
 complete the assignment. The code should be able to pass the test that we
 wrote. To run the tests, use `pytest test_numpy_question.py` at the root of
 the repo. It should say that 2 tests ran with success.
@@ -17,7 +18,7 @@ errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
 
-#test
+
 def max_index(X):
     """Return the index of the maximum in a numpy array.
 
@@ -41,6 +42,19 @@ def max_index(X):
     j = 0
 
     # TODO
+    if type(X) is not np.ndarray:
+        raise ValueError("ValueError exception thrown")
+
+    if len(X.shape) != 2:
+        raise ValueError("ValueError exception thrown")
+    nb_lines, nb_cols = X.shape
+    max_value = X[0, 0]
+    for num_line in range(nb_lines):
+        for num_col in range(nb_cols):
+            if X[num_line, num_col] > max_value:
+                i = num_line
+                j = num_col
+                max_value = X[i, j]
 
     return i, j
 
@@ -64,4 +78,10 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    if n_terms == 0:
+        res = 1
+    else:
+        res = 1
+        for n in range(1, n_terms+1):
+            res *= ((2*n)/(2*n-1))*((2*n)/(2*n+1))
+    return 2 * res
