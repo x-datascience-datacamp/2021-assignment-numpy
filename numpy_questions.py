@@ -46,6 +46,7 @@ def max_index(X):
     except AssertionError:
         raise ValueError
     
+    
     i, j = np.unravel_index(X.argmax(), X.shape)
     return i, j
 
