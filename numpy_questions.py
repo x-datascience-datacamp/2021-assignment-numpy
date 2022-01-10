@@ -43,12 +43,10 @@ def max_index(X):
         raise ValueError("Not 2D")
     i = 0
     j = 0
-    max = np.where(X==X.max())
+    max = np.where(X == X.max())
     i, j = max[0][0], max[1][0]
 
     return i, j
-
-
 
 def wallis_product(n_terms):
     """Implement the Wallis product to compute an approximation of pi.
@@ -69,7 +67,7 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    n=np.arange(1,n_terms+1)
-    a=(4.*n**2.)/(4.*n**2.-1.)
+    n = np.arange(1, n_terms+1)
+    a = (4. * n**2.) / (4. * n**2. - 1.)
     
-    return np.product(a)*2
+    return np.product(a) * 2
