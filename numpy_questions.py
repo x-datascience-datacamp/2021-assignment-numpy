@@ -30,7 +30,7 @@ def max_index(X):
     -------
     (i, j) : tuple(int)
         The row and columnd index of the maximum.
-    
+
     Raises
     ------
     ValueError
@@ -54,7 +54,7 @@ def wallis_product(n_terms):
     n_terms : int
         Number of steps in the Wallis product. Note that `n_terms=0` will
         consider the product to be `1`.
-    
+
     Returns
     -------
     pi : float
