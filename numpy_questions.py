@@ -1,4 +1,3 @@
-
 """Assignment - using numpy and making a PR.
 
 The goals of this assignment are:
@@ -14,12 +13,10 @@ We also ask to respect the pep8 convention: https://pep8.org.
 This will be enforced with `flake8`. You can check that there is no flake8
 errors by calling `flake8` at the root of the repo.
 """
-
 import numpy as np
 
 
 def max_index(X):
-
     """Return the index of the maximum in a numpy array.
 
     Parameters
@@ -36,7 +33,6 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-
     i = 0
     j = 0
 
@@ -64,7 +60,6 @@ def max_index(X):
 
 
 def wallis_product(n_terms):
-
     """Implement the Wallis product to compute an approximation of pi.
 
     See:
@@ -79,7 +74,6 @@ def wallis_product(n_terms):
     pi : float
         The approximation of order `n_terms` of pi using the Wallis product.
     """
-
     if n_terms < 0:
         deb_msg = "ERROR wallis_product:"
         fin_msg = " passed in argument)"
