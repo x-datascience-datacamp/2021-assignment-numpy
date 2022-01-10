@@ -8,7 +8,7 @@ The goals of this assignment are:
 The two functions below are skeleton functions. The docstrings explain what
 are the inputs, the outputs and the expected error. Fill the function to
 complete the assignment. The code should be able to pass the test that we
-wrote. To run the tests, use `pytest test_numpy_question.py` at the root of
+wrote. To run the tests, use `pytest test_numpy_questions.py` at the root of
 the repo. It should say that 2 tests ran with success.
 
 We also ask to respect the pep8 convention: https://pep8.org.
@@ -37,13 +37,14 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-    i = 0
-    j = 0
-    #assert isinstance(X, np.ndarray) == True
-    assert len(X.shape) == 2
-    # TODO
-    i , j = np.argmax(X, axis = 1)
-    return i, j
+    #assert isinstance(X, np.ndarray)
+    if len(X.shape) != 2 or isinstance(X, np.ndarray) == False: 
+        raise ValueError()
+    else:
+        i = 0
+        j = 0
+        i , j = int(np.where(X == np.amax(X))[0]), int(np.where(X == np.amax(X))[1])
+        return i, j
 
 
 def wallis_product(n_terms):
@@ -72,12 +73,3 @@ def wallis_product(n_terms):
         total = left * right
         pi = pi * total
     return 2 * pi
-# pytest
-##git checkout -b username-solution
-##commit : git status(changes done on the folder)
-### git add numpy_questions.py :  to create a commit
-### git commit -m " "
-##git push origin username(will push the code to the origin remote)
-##git remote -v ( to see the origin of the code)
-###git push -u(create a new branch on the fork)
-### flake8 : run the code locally
