@@ -17,7 +17,7 @@ errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
 
-
+#test
 def max_index(X):
     """Return the index of the maximum in a numpy array.
 
