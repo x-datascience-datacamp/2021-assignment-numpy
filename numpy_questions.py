@@ -40,7 +40,16 @@ def max_index(X):
     i = 0
     j = 0
 
-    # TODO
+    try:
+        indices = np.where(X == X.max())
+        i = indices[0][0]
+        j = indices[1][0]
+
+    except AttributeError:
+        raise ValueError('Type Error - Maybe None Type detected')
+
+    except IndexError:
+        raise ValueError('Shape Error - Must be 2D array')
 
     return i, j
 
@@ -64,4 +73,11 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    pi = 2.
+    for i in range(1, n_terms + 1):
+        left = (2. * i) / (2. * i - 1.)
+        right = (2. * i) / (2. * i + 1.)
+        pi = pi * left * right
+
+    return pi
+
