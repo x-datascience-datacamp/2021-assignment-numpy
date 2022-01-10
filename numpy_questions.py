@@ -79,7 +79,7 @@ def wallis_product(n_terms):
     # terms in the product. For example 10000.
     pi = 1
     for n in range(n_terms): 
-        pi =  pi*4*(n+1)**2/ (4*(n+1)**2 -1 )
+        pi *=  4*(n+1)**2/(4*(n+1)**2 -1)
     
     return pi*2
 
