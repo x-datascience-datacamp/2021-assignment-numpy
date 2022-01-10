@@ -41,7 +41,20 @@ def max_index(X):
     j = 0
 
     # TODO
-
+    n_samples, n_features = X.shape
+    
+    if ((isinstance(X, np.ndarray)!= True) or (X.ndim != 2)):
+        print('X is not a numpy array or its shape is not 2D')
+    
+    else:
+        
+        aux = X[i, j]
+        for m in range(n_samples):
+            for n in range(n_features):
+                if(aux < X[i, j]):
+                    i = m
+                    j = n
+            
     return i, j
 
 
@@ -64,4 +77,8 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    pi_aprox = 1
+    for i in range(n_terms):
+        pi_aprox*= 4*i**2/(4*i**2-1)
+     
+    return pi_aprox/2
