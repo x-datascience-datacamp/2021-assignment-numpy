@@ -41,17 +41,17 @@ def max_index(X):
     j = 0
 
     # TODO
-    if type(X)==np.ndarray:
-        if X.ndim>2:
-            raise ValueError('The shape is not 2D') 
-    if type(X)!=np.ndarray:
-        raise ValueError('This is not an numpy array')        
-    a = np.argmax(X,axis=0)
-    b = np.argmax(X,axis=1)
+    if type(X) == np.ndarray:
+        if X.ndim > 2:
+            raise ValueError('The shape is not 2D')
+    if type(X) != np.ndarray:
+        raise ValueError('This is not an numpy array')
+    a = np.argmax(X, axis=0)
+    b = np.argmax(X, axis=1)
     for k in list(a):
-        for l in list(b):
-            if X[k,l]==np.max(X):
-                i, j = k, l
+        for m in list(b):
+            if X[k, m] == np.max(X):
+                i, j = k, m
 
     return i, j
 
