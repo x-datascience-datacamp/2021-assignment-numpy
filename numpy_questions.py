@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """Assignment - using numpy and making a PR.
 
 The goals of this assignment are:
@@ -15,6 +17,7 @@ We also ask to respect the pep8 convention: https://pep8.org.
 This will be enforced with `flake8`. You can check that there is no flake8
 errors by calling `flake8` at the root of the repo.
 """
+
 import numpy as np
 
 
@@ -37,12 +40,26 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
+
     i = 0
     j = 0
 
     # TODO
 
-    return i, j
+    try:
+
+        for k in range(X.shape[0]):
+            for h in range(X.shape[1]):
+                if X[k, h] > X[i, j]:
+                    i = k
+                    j = h
+    except IndexError:
+        raise ValueError("Array must be 2D")
+
+    except AttributeError:
+        raise ValueError("Input must be a numpy array") 
+
+    return (i, j)
 
 
 def wallis_product(n_terms):
@@ -62,6 +79,11 @@ def wallis_product(n_terms):
     pi : float
         The approximation of order `n_terms` of pi using the Wallis product.
     """
+
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+
+    pi = 2.
+    for n in range(1, n_terms + 1):
+        pi *= 2 * n / (2 * n - 1) * (2 * n / (2 * n + 1))
+    return pi
