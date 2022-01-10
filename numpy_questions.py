@@ -41,7 +41,7 @@ def max_index(X):
     j = 0
 
     # TODO
-    if (X is None) or (isinstance(X, type(np.array([]))) == False) or (len(X.shape) != 2):
+    if (not isinstance(X, type(np.array([])))) or (len(X.shape) != 2):
         raise ValueError
 
     i, j = np.unravel_index(np.argmax(X), X.shape)
