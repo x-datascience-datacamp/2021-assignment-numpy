@@ -41,8 +41,16 @@ def max_index(X):
     j = 0
 
     # TODO
-    print('test')
-    print('testttt')
+    if type(X) is not np.ndarray:
+        raise ValueError("TYPE ERROR : Input is not a ndarray")
+    if len(X.shape) != 2:
+        raise ValueError("SHAPE ERROR : Input is not 2 dimensions")
+    
+    for k in range(X.shape[0]):
+        for l in range(X.shape[1]):
+            if X[k, l] > X[i, j]:
+                i, j = k, l
+                
     return i, j
 
 
