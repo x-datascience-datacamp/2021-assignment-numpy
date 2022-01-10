@@ -1,14 +1,16 @@
-#include
+# include
 import numpy as np
 
-#max index
+
+# max index
 def max_index(X):
     if not isinstance(X, np.ndarray) or X.ndim != 2:
         raise ValueError("X must be a 2D numpy array")
     cord = np.unravel_index(np.argmax(X, axis=None), X.shape)
     return cord[0], cord[1]
 
-#wallis
+
+# wallis
 def wallis_product(n_terms):
     pi = 1
     for i in range(1, n_terms+1):
