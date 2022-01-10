@@ -41,7 +41,10 @@ def max_index(X):
     j = 0
 
     # TODO
-
+    if not(isinstance(X, np.ndarray)) or len(X.shape) != 2:
+        raise ValueError
+    m = np.argmax(X)
+    i, j = m // X.shape[1], m % X.shape[1]
     return i, j
 
 
@@ -64,4 +67,6 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    wallis = [4*n*n/(4*n*n-1) for n in range(1, n_terms+1)]
+    pi_approx = 2*np.prod(wallis)
+    return pi_approx
