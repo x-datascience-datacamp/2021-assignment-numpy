@@ -46,7 +46,7 @@ def max_index(X):
         j = indices[1][0]
 
     except AttributeError:
-        raise ValueError('Type Error - Maybe None Type detected')
+        raise ValueError('Type Error - None Type detected in input parameter')
 
     except IndexError:
         raise ValueError('Shape Error - Must be 2D array')
@@ -80,4 +80,3 @@ def wallis_product(n_terms):
         pi = pi * left * right
 
     return pi
-
