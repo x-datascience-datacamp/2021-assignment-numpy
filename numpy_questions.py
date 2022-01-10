@@ -18,6 +18,7 @@ This will be enforced with `flake8`. You can check that there is no flake8
 errors by calling `flake8` at the root of the repo.
 """
 
+
 def max_index(X):
     """Return the index of the maximum in a numpy array.
 
@@ -54,7 +55,7 @@ def max_index(X):
         raise ValueError("Array must be 2D")
 
     except AttributeError:
-        raise ValueError("Input must be a numpy array") 
+        raise ValueError("Input must be a numpy array")
 
     return (i, j)
 
