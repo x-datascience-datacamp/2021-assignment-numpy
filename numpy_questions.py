@@ -39,9 +39,10 @@ def max_index(X):
     """
     i = 0
     j = 0
-
+    #assert isinstance(X, np.ndarray) == True
+    assert len(X.shape) == 2
     # TODO
-
+    i , j = np.argmax(X, axis = 1)
     return i, j
 
 
@@ -64,4 +65,19 @@ def wallis_product(n_terms):
     """
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
-    return 0.
+    pi = 1.
+    for i in range(1, n_terms):
+        left = float(2 * i)/(2 * i - 1)
+        right = float(2 * i)/(2 * i + 1)
+        total = left * right
+        pi = pi * total
+    return 2 * pi
+# pytest
+##git checkout -b username-solution
+##commit : git status(changes done on the folder)
+### git add numpy_questions.py :  to create a commit
+### git commit -m " "
+##git push origin username(will push the code to the origin remote)
+##git remote -v ( to see the origin of the code)
+###git push -u(create a new branch on the fork)
+### flake8 : run the code locally
