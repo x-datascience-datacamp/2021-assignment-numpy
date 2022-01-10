@@ -37,10 +37,8 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-    i = 0
-    j = 0
 
-    # TODO
+    i, j = np.unravel_index(np.argmax(X))
 
     return i, j
 
