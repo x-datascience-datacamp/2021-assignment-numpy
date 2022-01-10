@@ -1,4 +1,5 @@
 """Assignment - using numpy and making a PR.
+
 The goals of this assignment are:
     * Use numpy in practice with two easy exercises.
     * Use automated tools to validate the code (`pytest` and `flake8`)
@@ -14,8 +15,10 @@ errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
 
+
 def max_index(X):
     """Return the index of the maximum in a numpy array.
+
     Parameters
     ----------
     X : ndarray of shape (n_samples, n_features)
@@ -32,25 +35,20 @@ def max_index(X):
     """
     i = 0
     j = 0
-    max = 0
 
     # TODO
     # Get the indices of one the maximum element in numpy array
-    if len(np.shape(X)) != 2:
-        raise ValueError
-    n_samples,n_features = np.shape(X)
-    for k in range(n_samples):
-      for q in range(n_features):
-        if (X[k][q]>max):
-          max = X[k][q]
-          i,j = k,q
-        else :
-          None
+    if type(X) != np.ndarray:
+        raise ValueError("Error : The input must be a numpy array")
+    if len(X.shape) != 2:
+        raise ValueError("Error : The input must be a 2D-numpy array")
+    i, j = np.unravel_index(np.argmax(X, axis=None), X.shape)
     return i, j
 
 
 def wallis_product(n_terms):
     """Implement the Wallis product to compute an approximation of pi.
+
     See:
     https://en.wikipedia.org/wiki/Wallis_product
     Parameters
@@ -63,14 +61,12 @@ def wallis_product(n_terms):
     pi : float
         The approximation of order `n_terms` of pi using the Wallis product.
     """
-    # XXX : The n_terms is an int that corresponds to the number of
-    # terms in the pr
-    if n_terms < 0:
-        raise ValueError("Number of terms negative")
-    if (n_terms==0):
-      return 2 
-    elif (type(n_terms)==int) :
-      A = 1
-      for i in range(1,n_terms+1):
-        A = A*((4*(i**2))/(4*(i**2) - 1))
-      return 2*A
+    if (n_terms < 0) or (type(n_terms) != int):
+        raise ValueError("Number of terms negative/ Not an Integer")
+    elif (n_terms == 0):
+        return 2
+    elif (type(n_terms) == int):
+        A = 1
+        for i in range(1, n_terms+1):
+            A = A*((4*(i**2))/(4*(i**2) - 1))
+        return 2*A
