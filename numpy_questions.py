@@ -37,7 +37,8 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-    #assert isinstance(X, np.ndarray)
+    if type(X) != np.ndarray:
+        raise ValueError()
     if len(np.shape(X)) != 2:
         raise ValueError()
     i , j = int(np.where(X == np.amax(X))[0]), int(np.where(X == np.amax(X))[1])
