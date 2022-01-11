@@ -66,5 +66,5 @@ def wallis_product(n_terms):
     """
     p = 1
     for i in range(n_terms):
-        p*=(4*(i+1)**2)/(4*(i+1)**2 - 1)
+        p *= (4*(i+1)**2)/(4*(i+1)**2 - 1)
     return 2*p
