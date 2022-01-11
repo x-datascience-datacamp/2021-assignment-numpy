@@ -16,7 +16,7 @@ This will be enforced with `flake8`. You can check that there is no flake8
 errors by calling `flake8` at the root of the repo.
 """
 import numpy as np
-#flake8 from the folder of the assignement
+
 
 def max_index(X):
     """Return the index of the maximum in a numpy array.
@@ -45,7 +45,7 @@ def max_index(X):
         raise ValueError("Numpy error")
     if (len(X.shape) != 2):
         raise ValueError("Not 2D Shape")
-    i,j = np.unravel_index(X.argmax(), X.shape)
+    i, j = np.unravel_index(X.argmax(), X.shape)
     return i, j
 
 
@@ -72,7 +72,6 @@ def wallis_product(n_terms):
     if n_terms == 1:
         pi = 4 / (4-1)
     for i in range(1, n_terms):
-        pi *= float(4 * i ** 2)/float(4 * i ** 2 - 1)
+        pi *= float(4 * i ** 2) / float(4 * i ** 2 - 1)
     pi *= 2
-    
     return pi
