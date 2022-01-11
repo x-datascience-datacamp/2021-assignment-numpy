@@ -77,7 +77,6 @@ def wallis_product(n_terms):
     """
     list_n = np.arange(1, n_terms+1, dtype=np.int64)
     list_2n = 2*list_n
-
     wallis = np.prod((list_2n)**2/((list_2n-1)*(list_2n+1)))
 
     return 2*wallis
