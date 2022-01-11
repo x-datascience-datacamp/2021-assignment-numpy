@@ -38,13 +38,10 @@ def max_index(X):
         if the shape is not 2D.
     """
     #assert isinstance(X, np.ndarray)
-    if len(X.shape) != 2 or isinstance(X, np.ndarray) == False: 
+    if len(np.shape(X)) != 2:
         raise ValueError()
-    else:
-        i = 0
-        j = 0
-        i , j = int(np.where(X == np.amax(X))[0]), int(np.where(X == np.amax(X))[1])
-        return i, j
+    i , j = int(np.where(X == np.amax(X))[0]), int(np.where(X == np.amax(X))[1])
+    return i, j
 
 
 def wallis_product(n_terms):
@@ -67,7 +64,7 @@ def wallis_product(n_terms):
     # XXX : The n_terms is an int that corresponds to the number of
     # terms in the product. For example 10000.
     pi = 1.
-    for i in range(1, n_terms):
+    for i in range(1, n_terms+1):
         left = float(2 * i)/(2 * i - 1)
         right = float(2 * i)/(2 * i + 1)
         total = left * right
