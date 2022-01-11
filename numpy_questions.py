@@ -39,16 +39,14 @@ def max_index(X):
     """
 
     if type(X) is not np.ndarray:
-        raise ValueError('input is not a numpy array')
+        raise ValueError('Not a numpy array')
 
-    if X.ndim != 2:
-        raise ValueError('input array is not a 2D-array')
+    if np.ndim(X) != 2:
+        raise ValueError('Not a 2D-array')
 
-    argmax = np.argwhere(X == X.max())
+    argmax = np.argwhere(X == np.max(X))
 
-    i, j = argmax[0][0], argmax[0][1]
-
-    return i, j
+    return argmax[0][0], argmax[0][1]
 
 
 def wallis_product(n_terms):
@@ -70,7 +68,7 @@ def wallis_product(n_terms):
     """
 
     if type(n_terms) != int:
-        raise ValueError('Input is not an integer')
+        raise ValueError('Not an integer')
 
     I_n = 1
 
