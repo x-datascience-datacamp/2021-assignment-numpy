@@ -37,16 +37,19 @@ def max_index(X):
         If the input is not a numpy array or
         if the shape is not 2D.
     """
-    if X is None or not isinstance(X, np.ndarray):
-        raise ValueError("The input is not a numpy array")
-    if X.ndim != 2:
-        raise ValueError("The numpy array is not of dimension 2")
     i = 0
     j = 0
     # TODO
-    max_val = X.max()
-    max_ind = np.where(X == max_val)
-    i, j = max_ind[0][0], max_index[1][0]
+    if type(X) != np.ndarray:
+        raise ValueError("The input is not a numpy array")
+    if len(X.shape) != 2:
+        raise ValueError("The numpy array is not of dimension 2")
+
+    nrows, ncols = X.shape
+    max_idx = np.argmax(X)
+    i = max_idx // nrows
+    j = max_idx % ncols
+
     return i, j
 
 
