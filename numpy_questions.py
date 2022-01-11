@@ -41,7 +41,8 @@ def max_index(X):
         raise ValueError()
     if len(np.shape(X)) != 2:
         raise ValueError()
-    i , j = int(np.where(X == np.amax(X))[0]), int(np.where(X == np.amax(X))[1])
+    i = int(np.where(X == np.amax(X))[0])
+    j = int(np.where(X == np.amax(X))[1])
     return i, j
 
 
@@ -66,8 +67,8 @@ def wallis_product(n_terms):
     # terms in the product. For example 10000.
     pi = 1.
     for i in range(1, n_terms+1):
-        left = float(2 * i)/(2 * i - 1)
-        right = float(2 * i)/(2 * i + 1)
+        left = float(2*i)/(2*i-1)
+        right = float(2*i)/(2*i+1)
         total = left * right
-        pi = pi * total
-    return 2 * pi
+        pi = pi*total
+    return 2*pi
