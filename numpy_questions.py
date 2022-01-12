@@ -76,5 +76,5 @@ def wallis_product(n_terms):
         left = (2. * i) / (2. * i - 1.)
         right = (2. * i) / (2. * i + 1.)
         pi = pi * left * right
-    
+
     return pi*2.
