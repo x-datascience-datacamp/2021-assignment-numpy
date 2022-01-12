@@ -76,5 +76,5 @@ def wallis_product(n_terms):
     for i in range(1, n_terms+1):
         tmp = 4*i**2
         S_n *= tmp/(tmp-1)
-    
+
     return 2*S_n
