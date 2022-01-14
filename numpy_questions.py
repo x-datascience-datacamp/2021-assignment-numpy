@@ -42,15 +42,6 @@ def max_index(X):
     elif X.ndim != 2:
         raise ValueError("shape is not 2D")
     else:
-        # i = 0
-        # j = 0
-
-        # m = X[i, j]
-
-        # for k in range(X.shape[0]):
-        #     for l in range(X.shape[1]):
-        #         if X[k, l] > m:
-        #             i, j = k, l
         i, j = np.unravel_index(np.argmax(X, axis=None), X.shape)
         return i, j
 
